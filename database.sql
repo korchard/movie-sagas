@@ -1,3 +1,5 @@
+DROP TABLE "movies";
+
 CREATE TABLE "movies" (
   "id" SERIAL PRIMARY KEY,
   "title" VARCHAR(120) NOT NULL,
@@ -6,18 +8,24 @@ CREATE TABLE "movies" (
 );
 
 -- movies can have multiple genres
+DROP TABLE "genres";
+
 CREATE TABLE "genres" (
   "id" SERIAL PRIMARY KEY,
   "name" VARCHAR(80) NOT NULL
 );
 
-
 -- CREATE JUNCTION TABLE
 -- You will need to create the junction table that stores the relationships between "movies" and "genres"
 -- This table will need to be populated with some data as well (INSERTS)
 -- Recall that this Junction Table will just be a table of ids!
+DROP TABLE "movie_genre";
 
-
+CREATE TABLE "movie_genre" (
+  "id" SERIAL PRIMARY KEY,
+  "movie_id" INT REFERENCES "movies",
+  "genre_id" INT REFERENCES "genres"
+);
 
 --------[ DATA! ]---------
 
@@ -42,16 +50,40 @@ VALUES
 -- starter genres
 INSERT INTO "genres" ("name")
 VALUES 
+('Action'),
 ('Adventure'),
 ('Animated'),
 ('Biographical'),
 ('Comedy'),
 ('Disaster'),
+('Documentary'),
 ('Drama'),
 ('Epic'),
 ('Fantasy'),
+('Horror'),
 ('Musical'),
 ('Romantic'),
 ('Science Fiction'),
 ('Space-Opera'),
-('Superhero');
+('Superhero'),
+('Thriller');
+
+INSERT INTO "movie_genre" ("movie_id", "genre_id")
+VALUES (1, 10), (1, 14), 
+(2, 3), (2, 8), (2, 13),
+(3, 1), (3, 16),
+(4, 3), (4, 2),
+(5, 8), (5, 17),
+(6, 1), (6, 10),
+(7, 1),
+(8, 2), (8, 10),
+(9, 3), (9, 5),
+(10, 1), (10, 8), (10, 14),
+(11, 8), (11, 14),
+(12, 7),
+(13, 1), (13, 8), (13, 13),
+(14, 2), (14, 3), (14, 5);
+
+SELECT * FROM "movies";
+SELECT * FROM "genres";
+SELECT * FROM "movie_genre";

@@ -2,23 +2,30 @@
   text-align: center;
 }
 
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+.header {
+  background-color: black;
   color: white;
+  height: 4em;
+  padding-top: 2.8em;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-.App-title {
-  font-size: 1.5em;
+.navBar {
+  background-color: white;
+  padding-top: 1em;
+  padding-bottom: 1.5em;
+  border-bottom: solid 3px black;
 }
 
-.App-intro {
-  font-size: large;
+nav li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 2em;
+  color: black;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+nav li a {
+  text-decoration: none;
+  color: black;
 }
