@@ -21,7 +21,7 @@ class Home extends Component {
           <section>
             {this.props.reduxStore.movies.map(movie => 
                 <div className="display card" key={movie.id}>
-                    <img alt={movie.title} src={movie.poster} />
+                    <img alt={movie.title} src={movie.poster} height="300px" width="200px"/>
                     <br></br>
                     <button className="button" 
                             onClick={() => this.goToDetails(movie.id)}>{movie.title}</button>

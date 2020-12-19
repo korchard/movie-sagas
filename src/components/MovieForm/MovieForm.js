@@ -8,7 +8,7 @@ class MovieForm extends Component {
         title: '',
         poster: '', 
         description: '',
-        genre: '',
+        genre_id: '',
     }
 
     handleChange = (event, inputProperty) => {
@@ -27,7 +27,7 @@ class MovieForm extends Component {
                 title: this.state.title,
                 poster: this.state.poster,
                 description: this.state.description,
-                genre: this.state.genre,
+                genre_id: this.state.genre_id,
             }});
         this.props.history.push('/');
     }
@@ -48,7 +48,7 @@ class MovieForm extends Component {
             <label htmlFor="description">Description</label>
                 <textarea type="text" id="description" onChange={(event) => this.handleChange(event, 'description')}/>
             <label htmlFor="category">Genre:</label>
-                <select name="category" id="category" onChange={(event) => this.handleChange(event, 'genre')}>
+                <select name="category" id="category" onChange={(event) => this.handleChange(event, 'genre_id')}>
                     <option>Select</option>
                     <option value="1">Action</option>
                     <option value="2">Adventure</option>

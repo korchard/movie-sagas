@@ -8,6 +8,7 @@
   height: 4em;
   padding-top: 2.8em;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: xx-large;
 }
 
 .navBar {
@@ -15,6 +16,7 @@
   padding-top: 1em;
   padding-bottom: 1.5em;
   border-bottom: solid 3px black;
+  margin-bottom: 4em;
 }
 
 nav li {
@@ -28,4 +30,5 @@ nav li {
 nav li a {
   text-decoration: none;
   color: black;
+  font-size: x-large;
 }

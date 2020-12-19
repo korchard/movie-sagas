@@ -16,7 +16,7 @@ class MovieDetail extends Component {
                 {this.props.reduxStore.movies.map(movie => 
                     <div key={movie.id}>
                         <h1>{movie.title}</h1>
-                        <img alt={movie.title} src={movie.poster} />
+                        <img alt={movie.title} src={movie.poster} height="300px" width="200px"/>
                         <br></br>
                         <p>{movie.description}</p>
                     </div>

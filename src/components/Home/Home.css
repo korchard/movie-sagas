@@ -1,10 +1,10 @@
 .card {
-    border: 1px solid white;
+    border: 1px solid black;
     justify-self: auto;
     border-radius: .5em;
     display: inline-block;
     width: 300px;
-    height: 320px;
+    height: 350px;
     text-align: center;
     padding: 1em;
     margin-right: 1rem;
@@ -23,4 +23,5 @@
 
 .button {
     margin-top: 1em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
