@@ -37,11 +37,11 @@ We'll be able to see movies that exist in our DB. We'll also be able to see deta
 
 ### Details Page
 
-[] This should show all details **including genres**, for the selected movie.
+[x] This should show all details **including genres**, for the selected movie.
 
  > Hint : You can make a GET request for a specific movie.
 
-[] The details page should have the button:
+[x] The details page should have the button:
 
 - `Back to List` button, which should bring the user to the Home Page
 
@@ -51,15 +51,15 @@ We'll be able to see movies that exist in our DB. We'll also be able to see deta
 
 This should show:
 
-- [] an input field (for the movie title)
-- [] an input field (for the movie poster image URL))
-- [] a textarea (for the movie description)
-- [] a dropdown (for the genres)
+- [x] an input field (for the movie title)
+- [x] an input field (for the movie poster image URL))
+- [x] a textarea (for the movie description)
+- [x] a dropdown (for the genres)
 
 The Add Movie page should have the buttons:
 
-- [] `Cancel` button, which should bring the user to the Home/List Page
-- [] `Save` button, which should update the title and description in the database and bring the user to the Home/List Page (which now has the new movie)
+- [x] `Cancel` button, which should bring the user to the Home/List Page
+- [x] `Save` button, which should update the title and description in the database and bring the user to the Home/List Page (which now has the new movie)
 
 > Hint: Look at the /api/movie POST route -- it's been made already
 > Hint: You'll want to use the genres that are in the db for your dropdown

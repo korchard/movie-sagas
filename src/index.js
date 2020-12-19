@@ -17,6 +17,7 @@ function* rootSaga() {
     yield takeEvery('GET_MOVIES', getMovies);
     yield takeEvery('GET_DETAILS', getDetails);
     yield takeEvery('GET_CATEGORY', getCategory);
+    yield takeEvery('ADD_MOVIE', addMovie);
 }
 
 function* getMovies() {
@@ -45,6 +46,16 @@ function* getCategory(action) {
         console.log('getCategory', response.data);
     } catch (error) {
     console.log('Bad news bears, error with INDEX GET', error);
+    }
+}
+
+function* addMovie( action ) {
+    console.log('index post', action.payload);
+    try { 
+        yield axios.post('/api/movie', action.payload)
+        yield put({ type: 'GET_MOVIES' }) 
+    } catch (error) {
+        console.log('Bad news bears, error with INDEX POST', error);
     }
 }
 
