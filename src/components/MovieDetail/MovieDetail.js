@@ -5,6 +5,12 @@ import './MovieDetail.css';
 
 class MovieDetail extends Component {
 
+    editMovie = (id) => {
+        console.log('id', id);
+        this.props.history.push(`/editMovie/${id}`); // routes to details page
+        this.props.dispatch({ type: 'GET_DETAILS', payload: id }) // specific movie GET
+        this.props.dispatch({ type: 'GET_CATEGORY', payload: id }) // category GET
+    }
 
   render() {
     // renders specific movie details
@@ -24,6 +30,8 @@ class MovieDetail extends Component {
                                     <br></br>
                                 {movie.description}
                             </div>
+                            <br></br>
+                            <button onClick={() => this.editMovie(movie.id)} className="detailButton">Edit</button>
                         </div>
                     </div>
                 )}

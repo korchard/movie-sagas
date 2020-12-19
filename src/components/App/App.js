@@ -5,6 +5,7 @@ import './App.css';
 import MovieList from '../MovieList/MovieList';
 import MovieForm from '../MovieForm/MovieForm';
 import MovieDetail from '../MovieDetail/MovieDetail';
+import EditMovie from '../EditMovie/EditMovie';
 
 class App extends Component {
   // Renders the entire app on the DOM
@@ -29,6 +30,7 @@ class App extends Component {
             <Route exact path="/" component={MovieList}/>
             <Route path="/movieForm" component={MovieForm} />
             <Route path="/movieDetails/:id" component={MovieDetail} />
+            <Route exact path="/editMovie/:id" component={EditMovie} />
           </Router>
       </div>
     );

@@ -6,14 +6,17 @@ import './MovieList.css';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-// import Paper from '@material-ui/core/Paper';
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
   },
-  control: {
+  container: {
+    display: 'flex',
+  },
+  card: {
     padding: theme.spacing.unit * 2,
+    textAlign: 'center',
   },
 });
 
@@ -40,17 +43,21 @@ class MovieList extends Component {
     const { spacing } = this.state;
 
     return (
-      <Grid container className={classes.root} spacing={32}>
+      
+      <Grid container className={classes.root} spacing={16}>
         <Grid item xs={12}>
           <Grid container className={classes.demo} justify="center" spacing={Number(spacing)}>
             {this.props.reduxStore.movies.map(movie =>
-              <Grid className="display card" key={movie.id}>
+              <Grid className="display card" key={movie.id} >
+  
                 <img className="homeImg" alt={movie.title} src={movie.poster} height="300px" width="200px"/>
                 <br></br>
                     <button className="button" 
                              onClick={() => this.goToDetails(movie.id)}>{movie.title}</button>
+              
               </Grid>
-            )}
+              
+            )}<br></br>
           </Grid>
         </Grid>
       </Grid>

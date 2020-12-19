@@ -28,6 +28,18 @@
 	}
 }
 
+.detailButton {
+    margin-top: 1em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: medium;
+    box-shadow: 2px 2px 5px black;
+    width: 12.5em;
+    height: 3em;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+    text-align: center;
+}
+
 .detailGenre {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: large;

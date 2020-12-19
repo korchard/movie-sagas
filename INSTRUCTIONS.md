@@ -72,7 +72,7 @@ As one of your last projects, it's possible you will be sharing this with employ
 
 - [x] Invest some time in styling it up!
     - [x] Research cards for your movie posters on the list page
-    - [ ] Research grids for your movie posters on the Movie List page ***************************
+    - [x] Research grids for your movie posters on the Movie List page ***************************
 - [x] Commit your code frequently! You should have at 15+ commits on a project of this size. Use branches to help break down your features.
 - [x] Comment your code.
 - [x] Update this README to include a description of the project in your own words.
@@ -80,21 +80,21 @@ As one of your last projects, it's possible you will be sharing this with employ
 ## Stretch Goals
 
 ### Edit Page (Stretch)
-[] Add to the detail page an edit button that brings the user to the edit page.
+[x] Add to the detail page an edit button that brings the user to the edit page.
 
 This new page should show:
 
-- [] an input field (for changing the movie title), for the selected movie.
-- [] a textarea (for changing the movie description)
+- [x] an input field (for changing the movie title), for the selected movie.
+- [x] a textarea (for changing the movie description)
 
 The edit page should have the buttons:
 
-- [] `Cancel` button, which should bring the user to the Details Page
-- [] `Save` button, which should update the title and description in the database and bring the user to the Details Page
+- [x] `Cancel` button, which should bring the user to the Details Page
+- [x] `Save` button, which should update the title and description in the database and bring the user to the Details Page
 
 ### Other Goals
 
-- [ ] Display the current values in the input (title) and textarea (description) on the Edit Page
+- [x] Display the current values in the input (title) and textarea (description) on the Edit Page
 - [ ] Display all genres on movie list page. Research [array_agg](https://stackoverflow.com/questions/43458174/how-to-save-and-return-javascript-object-with-subarray-in-normalized-sql) to make this possible.
 - [ ] Allow the user to select many genres
 - [ ] Move sagas and reducers out of your `index.js` and into separate files (ideally in `src/redux/reducers` and `src/redux/sagas` folders).

@@ -15,7 +15,7 @@
     height: 450px;
     text-align: center;
     padding: 1em;
-    margin-right: 3rem;
+    margin-right: 3em;
     margin-left: 3em;
     margin-bottom: 1rem;
     box-shadow: 2px 2px 5px black;
@@ -47,4 +47,8 @@
 .homeImg {
     margin-top: 2.5em;
     box-shadow: 2px 2px 5px white;
+}
+
+.MuiGrid-item {
+    margin: 1em;
 }
