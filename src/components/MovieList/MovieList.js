@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import './Home.css';
+import './MovieList.css';
 
 class Home extends Component {
 

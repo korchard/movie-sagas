@@ -31,11 +31,11 @@ class MovieForm extends Component {
                 description: this.state.description,
                 genre_id: this.state.genre_id,
             }}); // POST ROUTE
-        this.props.history.push('/'); // routes back to HOME
+        this.props.history.push('/'); // routes back to MovieList
     } // end addMovie
 
-    backToHome = () => {
-        this.props.history.push('/'); // routes back to HOME
+    backToMovieList = () => {
+        this.props.history.push('/'); // routes back to MovieList
     } // end backToHome - CANCEL button
 
   render() {
@@ -93,7 +93,7 @@ class MovieForm extends Component {
                     <button className="button" 
                             onClick={this.addMovie}>Save</button>
                     <button className="button"
-                            onClick={this.backToHome}>Cancel</button>
+                            onClick={this.backToMovieList}>Cancel</button>
             </div>
         </form>
       </div>

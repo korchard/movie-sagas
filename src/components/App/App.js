@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {HashRouter as Router, Route, Link} from 'react-router-dom';
 import './App.css';
 
-import Home from '../Home/Home';
+import MovieList from '../MovieList/MovieList';
 import MovieForm from '../MovieForm/MovieForm';
 import MovieDetail from '../MovieDetail/MovieDetail';
 
@@ -20,13 +20,13 @@ class App extends Component {
             <div className="navBar">
               <nav>
                 <ul>
-                  <li><Link to ="/">Home</Link></li> 
+                  <li><Link to ="/">Movie List</Link></li> 
                   <li><Link to ="/movieForm">Add a Movie</Link></li>
                   {/* <li><Link to ="/movieDetails">Movie Details</Link></li> */}
                 </ul>
               </nav>
             </div>
-            <Route exact path="/" component={Home}/>
+            <Route exact path="/" component={MovieList}/>
             <Route path="/movieForm" component={MovieForm} />
             <Route path="/movieDetails/:id" component={MovieDetail} />
           </Router>
