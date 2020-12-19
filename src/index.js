@@ -16,12 +16,13 @@ import axios from 'axios';
 function* rootSaga() {
     yield takeEvery('GET_MOVIES', getMovies);
     yield takeEvery('GET_DETAILS', getDetails);
+    yield takeEvery('GET_CATEGORY', getCategory);
 }
 
 function* getMovies() {
     try {
         const response = yield axios.get('/api/movie');
-        yield put({ type:'SET_MOVIES', payload: response.data })
+        yield put({ type: 'SET_MOVIES', payload: response.data })
     } catch (error) {
     console.log('Bad news bears, error with INDEX GET', error);
     }
@@ -30,7 +31,18 @@ function* getMovies() {
 function* getDetails(action) {
     try {
         const response = yield axios.get(`/api/movie/${action.payload}`);
-        yield put({ type:'SET_MOVIES', payload: response.data })
+        yield put({ type: 'SET_MOVIES', payload: response.data })
+        console.log('getDetails', response.data);
+    } catch (error) {
+    console.log('Bad news bears, error with INDEX GET', error);
+    }
+}
+
+function* getCategory(action) {
+    try {
+        const response = yield axios.get(`/api/genre/${action.payload}`);
+        yield put({ type: 'SET_GENRES', payload: response.data })
+        console.log('getCategory', response.data);
     } catch (error) {
     console.log('Bad news bears, error with INDEX GET', error);
     }

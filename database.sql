@@ -87,3 +87,10 @@ VALUES (1, 10), (1, 14),
 SELECT * FROM "movies";
 SELECT * FROM "genres";
 SELECT * FROM "movie_genre";
+
+SELECT * FROM "movies" WHERE id = 1;
+
+SELECT name FROM "genres" 
+JOIN "movie_genre" ON genres.id = movie_genre.genre_id
+JOIN "movies" ON movie_genre.movie_id = movies.id
+WHERE movies.id = 1;

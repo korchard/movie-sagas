@@ -4,13 +4,31 @@ import { connect } from "react-redux";
 import './MovieDetail.css';
 
 class MovieDetail extends Component {
+
+
   render() {
     return (
       <div>
-        <h1>MovieDetail!</h1>
+          <section>
+                {this.props.reduxStore.genres.map(genre => 
+                    <p key={genre.name}>{genre.name}</p>)}
+
+                {this.props.reduxStore.movies.map(movie => 
+                    <div key={movie.id}>
+                        <h1>{movie.title}</h1>
+                        <img alt={movie.title} src={movie.poster} />
+                        <br></br>
+                        <p>{movie.description}</p>
+                    </div>
+                    )}
+        </section>
       </div>
     );
   }
 }
 
-export default MovieDetail;
+const putReduxStateOnProps = (reduxStore) => ({
+    reduxStore
+});
+
+export default connect(putReduxStateOnProps)(MovieDetail);

@@ -12,6 +12,7 @@ class Home extends Component {
         console.log('id', id);
         this.props.history.push(`/movieDetails/${id}`);
         this.props.dispatch({ type: 'GET_DETAILS', payload: id })
+        this.props.dispatch({ type: 'GET_CATEGORY', payload: id })
     }
 
   render() {
