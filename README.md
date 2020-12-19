@@ -38,9 +38,9 @@ This is an application that demonstrates the use of react-redux, joining databas
 
 ## Usage
 
-1. Users are directed to a Home page that displays all of the movies available.
+1. Users are directed to a Home page that displays a list of movies.
 2. Clicking on a movie will route you to another page which includes the details about the movie.
-3. There is a Movie Form page that allows the user to add a movie to the database, which will then be displayed on the home page. 
+3. There is a Movie Form page that allows the user to add a movie to the database, which will then be displayed on the movie list page. 
 4. ..........
 
 ## Built With
