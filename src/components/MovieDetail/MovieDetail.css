@@ -1,10 +1,10 @@
-.card {
+.detailCard {
     border: 1px solid black;
     justify-self: auto;
     border-radius: .5em;
     display: inline-block;
-    width: 300px;
-    height: 350px;
+    width: 900px;
+    height: 750px;
     text-align: center;
     padding: 1em;
     margin-right: 1rem;
@@ -12,11 +12,9 @@
     background-color: white;
 }
 
-.display {
-    width: 20%;
-    float: left;
-    overflow: hidden;
-    margin-top: 2em;
-    margin-bottom: 2em;
-    margin-left: 8em;
+.genreCategory {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: large;
+    display: inline-block;
+    padding: 0.5em;
 }

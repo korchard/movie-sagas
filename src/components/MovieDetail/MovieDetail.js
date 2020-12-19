@@ -9,9 +9,9 @@ class MovieDetail extends Component {
   render() {
     return (
       <div>
-          <section>
+          <section className="detailCard">
                 {this.props.reduxStore.genres.map(genre => 
-                    <p key={genre.name}>{genre.name}</p>)}
+                    <p className="genreCategory" key={genre.name}>{genre.name}</p>)}
 
                 {this.props.reduxStore.movies.map(movie => 
                     <div key={movie.id}>
