@@ -15,7 +15,8 @@
     height: 450px;
     text-align: center;
     padding: 1em;
-    margin-right: 1rem;
+    margin-right: 3rem;
+    margin-left: 3em;
     margin-bottom: 1rem;
     box-shadow: 2px 2px 5px black;
     background: linear-gradient(-45deg, #414040, #1f171a, #c1c3c4, #494d4c);
@@ -41,7 +42,6 @@
     overflow: hidden;
     margin-top: 2em;
     margin-bottom: 2em;
-    margin-left: 8em;
 }
 
 .homeImg {

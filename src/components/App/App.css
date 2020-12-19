@@ -7,9 +7,11 @@
   color: white;
   text-shadow: 2px 2px 5px black;
   height: 4em;
-  padding-top: 2.8em;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: xx-large;
+  padding-top: 2.3em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  letter-spacing: 10px;
+  font-weight: 900;
+  font-size: 3em;
   margin: 0;
   background: linear-gradient(-45deg, #414040, #1f171a, #c1c3c4, #494d4c);
 	background-size: 400% 400%;
