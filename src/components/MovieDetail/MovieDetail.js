@@ -7,21 +7,27 @@ class MovieDetail extends Component {
 
 
   render() {
+    // renders specific movie details
+
     return (
       <div>
-          <section className="detailCard">
-                {this.props.reduxStore.genres.map(genre => 
-                    <p className="genreCategory" key={genre.name}>{genre.name}</p>)}
-
+          <section>
                 {this.props.reduxStore.movies.map(movie => 
                     <div key={movie.id}>
-                        <h1>{movie.title}</h1>
-                        <img alt={movie.title} src={movie.poster} height="300px" width="200px"/>
-                        <br></br>
-                        <p>{movie.description}</p>
+                        <img className="detailImg" alt={movie.title} src={movie.poster} height="600px" width="400px"/>
+                            <br></br>
+                        <div className="detailText">
+                            <h1 className="detailTitle">{movie.title}</h1>
+                            <div className="detailCard">
+                                {this.props.reduxStore.genres.map(genre => 
+                                <p className="detailGenre" key={genre.name}>{genre.name}</p>)}
+                                    <br></br>
+                                {movie.description}
+                            </div>
+                        </div>
                     </div>
-                    )}
-        </section>
+                )}
+          </section>
       </div>
     );
   }

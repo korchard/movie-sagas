@@ -5,18 +5,33 @@
 .header {
   background-color: black;
   color: white;
+  text-shadow: 2px 2px 5px black;
   height: 4em;
   padding-top: 2.8em;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: xx-large;
+  margin: 0;
+  background: linear-gradient(-45deg, #414040, #1f171a, #c1c3c4, #494d4c);
+	background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 .navBar {
-  background-color: white;
   padding-top: 1em;
   padding-bottom: 1.5em;
-  border-bottom: solid 3px black;
-  margin-bottom: 4em;
+  margin-bottom: 2em;
 }
 
 nav li {
@@ -31,4 +46,35 @@ nav li a {
   text-decoration: none;
   color: black;
   font-size: x-large;
+  text-shadow: 2px 2px 5px white;
 }
+
+/* .effect {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, rgb(40, 41, 39) 50%, rgb(67, 96, 116) 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.dos {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.tres {
+  animation-duration:5s;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+} */

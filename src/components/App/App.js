@@ -8,24 +8,28 @@ import MovieDetail from '../MovieDetail/MovieDetail';
 
 class App extends Component {
   // Renders the entire app on the DOM
+  
   render() {
     return (
       <div className="App">
+        {/* <div className="effect"></div>
+        <div className="effect dos"></div>
+        <div className="effect tres"></div> */}
         <h1 className="header">HB OH-NO!</h1>
-        <Router>
-          <div className="navBar">
-          <nav>
-            <ul>
-              <li><Link to ="/">Home</Link></li> 
-              <li><Link to ="/movieForm">Add a Movie</Link></li>
-              {/* <li><Link to ="/movieDetails">Movie Details</Link></li> */}
-            </ul>
-          </nav>
-          </div>
-          <Route exact path="/" component={Home}/>
-          <Route path="/movieForm" component={MovieForm} />
-          <Route path="/movieDetails/:id" component={MovieDetail} />
-        </Router>
+          <Router>
+            <div className="navBar">
+              <nav>
+                <ul>
+                  <li><Link to ="/">Home</Link></li> 
+                  <li><Link to ="/movieForm">Add a Movie</Link></li>
+                  {/* <li><Link to ="/movieDetails">Movie Details</Link></li> */}
+                </ul>
+              </nav>
+            </div>
+            <Route exact path="/" component={Home}/>
+            <Route path="/movieForm" component={MovieForm} />
+            <Route path="/movieDetails/:id" component={MovieDetail} />
+          </Router>
       </div>
     );
   }

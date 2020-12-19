@@ -1,15 +1,39 @@
+.button {
+    margin-top: 1em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: medium;
+    box-shadow: 2px 2px 5px black;
+    width: 12.5em;
+    height: 3em;
+}
+
 .card {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     justify-self: auto;
     border-radius: .5em;
     display: inline-block;
-    width: 300px;
-    height: 350px;
+    width: 250px;
+    height: 450px;
     text-align: center;
     padding: 1em;
     margin-right: 1rem;
     margin-bottom: 1rem;
-    background-color: white;
+    box-shadow: 2px 2px 5px black;
+    background: linear-gradient(-45deg, #414040, #1f171a, #c1c3c4, #494d4c);
+	background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 .display {
@@ -21,7 +45,7 @@
     margin-left: 8em;
 }
 
-.button {
-    margin-top: 1em;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+.homeImg {
+    margin-top: 2.5em;
+    box-shadow: 2px 2px 5px white;
 }

@@ -1,20 +1,56 @@
 .detailCard {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     justify-self: auto;
     border-radius: .5em;
     display: inline-block;
-    width: 900px;
-    height: 750px;
+    width: 600px;
+    height: 350px;
     text-align: center;
     padding: 1em;
     margin-right: 1rem;
     margin-bottom: 1rem;
-    background-color: white;
+    box-shadow: 2px 2px 5px black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background: linear-gradient(-45deg, #414040, #f8f4f5, #c1c3c4, #494d4c);
+	background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
 }
 
-.genreCategory {
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.detailGenre {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: large;
     display: inline-block;
     padding: 0.5em;
+}
+
+.detailImg {
+    float: left;
+    margin-left: 15em;
+    margin-bottom: 3em;
+    box-shadow: 5px 5px 10px white;
+}
+
+.detailTitle {
+    /* float: right;
+    margin-right: 9.5em; */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 3em;
+    text-shadow: 2px 2px 5px black;
+    color: white;
+}
+
+.detailText {
+    text-align: center;
 }
