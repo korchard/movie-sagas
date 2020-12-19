@@ -1,0 +1,84 @@
+.button {
+    margin-top: 1em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: medium;
+    box-shadow: 2px 2px 5px black;
+    width: 12.5em;
+    height: 3em;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+}
+
+.formCard {
+    justify-self: auto;
+    border-radius: .5em;
+    display: inline-block;
+    width: 450px;
+    height: 450px;
+    text-align: center;
+    padding: 1em;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 2px 2px 5px black;
+    background: linear-gradient(-45deg, #414040, #1f171a, #c1c3c4, #494d4c);
+	background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+}
+
+#category {
+    box-shadow: 2px 2px 5px black;
+    width: 300px;
+    padding: 1em;
+    margin-bottom: 5em;
+    margin-top: 2em;
+}
+
+.formBox {
+    float: left;
+    margin-left: 15em;
+}
+
+input {
+    box-shadow: 2px 2px 5px black;
+    background: linear-gradient(-45deg, #a7a5a5, #f8eff2, #c1c3c4, #d2d4d4);
+	background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    width: 300px;
+    height: 3em;
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+label {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-shadow: 2px 2px 5px white;
+    font-size: large;
+    margin-right: 2em;
+}
+
+#newGenre {
+    padding-right: 1.2em;
+}
+
+textarea {
+    box-shadow: 2px 2px 5px black;
+    background: linear-gradient(-45deg, #a7a5a5, #f8eff2, #c1c3c4, #d2d4d4);
+	background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    width: 350px;
+    height: 330px;
+    margin-bottom: 2em;
+    margin-top: 2em;
+}

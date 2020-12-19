@@ -42,22 +42,30 @@ class MovieForm extends Component {
     return (
       <div>
         <form>
+            <div className="formBox formCard">
+            <br></br>
+            <label htmlFor="description">Description</label>
+            <br></br>
+                <textarea 
+                    type="text" 
+                    id="description" 
+                    onChange={(event) => this.handleChange(event, 'description')}/>
+            </div>
+
+            <div className="formCard">
             <label htmlFor="movieTitle">Movie Title</label>
                 <input 
                     type="text" 
                     id="movieTitle" 
                     onChange={(event) => this.handleChange(event, 'title')}/>
+                    <br></br>
             <label htmlFor="posterUrl">Poster URL</label>
                 <input 
                     type="url" 
                     id="posterUrl" 
                     onChange={(event) => this.handleChange(event, 'poster')}/>
-            <label htmlFor="description">Description</label>
-                <textarea 
-                    type="text" 
-                    id="description" 
-                    onChange={(event) => this.handleChange(event, 'description')}/>
-            <label htmlFor="category">Genre:</label>
+                    <br></br>
+            <label htmlFor="category" id="newGenre">Genre</label>
                 <select 
                     name="category" 
                     id="category" 
@@ -81,9 +89,13 @@ class MovieForm extends Component {
                         <option value="16">Superhero</option>
                         <option value="17">Thriller</option>
                 </select>
-                    <button onClick={this.addMovie}>Save</button>
+                <br></br>
+                    <button className="button" 
+                            onClick={this.addMovie}>Save</button>
+                    <button className="button"
+                            onClick={this.backToHome}>Cancel</button>
+            </div>
         </form>
-                    <button onClick={this.backToHome}>Cancel</button>
       </div>
     );
   }
