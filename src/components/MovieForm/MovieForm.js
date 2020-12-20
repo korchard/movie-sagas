@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
+// import { Multiselect } from 'multiselect-react-dropdown';
 import './MovieForm.css';
 
 class MovieForm extends Component {
