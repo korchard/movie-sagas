@@ -5,3 +5,69 @@
     color: white;
     margin-top: 0;
 }
+
+.detailCard {
+    justify-self: auto;
+    border-radius: .5em;
+    display: inline-block;
+    width: 600px;
+    height: 350px;
+    text-align: center;
+    padding: 1em;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 2px 2px 5px black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background: linear-gradient(-45deg, #414040, #f8f4f5, #c1c3c4, #494d4c);
+	background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.detailButton {
+    margin-top: 1em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: medium;
+    box-shadow: 2px 2px 5px black;
+    width: 12.5em;
+    height: 3em;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+    text-align: center;
+}
+
+.detailGenre {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: large;
+    display: inline-block;
+    padding: 0.5em;
+}
+
+.detailImg {
+    float: left;
+    margin-left: 15em;
+    margin-bottom: 3em;
+    box-shadow: 10px 10px 20px white;
+}
+
+.detailTitle {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 3em;
+    text-shadow: 2px 2px 5px black;
+    color: white;
+}
+
+.detailText {
+    text-align: center;
+}

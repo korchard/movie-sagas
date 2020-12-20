@@ -22,6 +22,7 @@ function* rootSaga() {
     yield takeEvery('GET_DETAILS', getDetails);
     yield takeEvery('GET_CATEGORY', getCategory);
     yield takeEvery('ADD_MOVIE', addMovie);
+    yield takeEvery('EDIT_MOVIE', editMovie);
 } // end rootSaga
 
 // GET ROUTE - for all movies on HOME page
@@ -68,6 +69,19 @@ function* addMovie( action ) {
         yield put({ type: 'GET_MOVIES' }) 
     } catch (error) {
         console.log('Bad news bears, error with INDEX POST', error);
+    }
+} // end addMovie
+
+// PUT ROUTE
+function* editMovie( action ) {
+    console.log('index put', action.payload);
+    try { 
+        yield axios.put(`/api/movie/${action.payload.movie_id}`, action.payload)
+        // calls GET ROUTE to refresh details page with new movie
+        yield put({ type: 'SET_MOVIES' }) 
+        console.log('PUT INDEX', )
+    } catch (error) {
+        console.log('Bad news bears, error with INDEX PUT', error);
     }
 } // end addMovie
 

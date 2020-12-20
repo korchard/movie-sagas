@@ -5,11 +5,12 @@ import './MovieDetail.css';
 
 class MovieDetail extends Component {
 
-    editMovie = (id) => {
-        console.log('id', id);
-        this.props.history.push(`/editMovie/${id}`); // routes to details page
-        this.props.dispatch({ type: 'GET_DETAILS', payload: id }) // specific movie GET
-        this.props.dispatch({ type: 'GET_CATEGORY', payload: id }) // category GET
+    editMovie = (movie) => {
+        console.log('id', movie.id);
+        this.props.history.push(`/editMovie/${movie.id}`); // routes to details page
+        this.props.dispatch({ type: 'GET_DETAILS', payload: movie.id }) // specific movie GET
+        this.props.dispatch({ type: 'GET_CATEGORY', payload: movie.id }) // category GET
+        this.props.dispatch({ type: 'EDIT_INPUTS', payload: movie} )
     }
 
   render() {
@@ -31,7 +32,7 @@ class MovieDetail extends Component {
                                 {movie.description}
                             </div>
                             <br></br>
-                            <button onClick={() => this.editMovie(movie.id)} className="detailButton">Edit</button>
+                            <button onClick={() => this.editMovie(movie)} className="detailButton">Edit</button>
                         </div>
                     </div>
                 )}

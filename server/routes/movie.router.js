@@ -65,4 +65,19 @@ router.post('/', (req, res) => {
   })
 }) // end POST ROUTE
 
+// PUT ROUTE
+router.put('/:id', (req, res) => {
+  console.log('in PUT');
+  let edit = req.body;
+  let id = req.params.id; // identify which item to update
+  let sqlText = `UPDATE "movies" SET "title" = $1, "description" = $2 WHERE "id" = $3;`
+  pool.query(sqlText, [edit.title, edit.description, id]) 
+      .then((result) => { 
+          res.sendStatus(200); 
+      }).catch(error => {
+        console.log('Bad news bears, error in PUT', error);
+        res.sendStatus(500)
+      })
+})
+
 module.exports = router;

@@ -36,6 +36,10 @@
 	}
 }
 
+.center {
+    padding-left: 12%;
+}
+
 .display {
     width: 20%;
     float: left;
@@ -47,8 +51,4 @@
 .homeImg {
     margin-top: 2.5em;
     box-shadow: 2px 2px 5px white;
-}
-
-.MuiGrid-item {
-    margin: 1em;
 }

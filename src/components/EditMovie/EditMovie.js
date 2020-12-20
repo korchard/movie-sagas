@@ -4,6 +4,40 @@ import './EditMovie.css';
 
 class EditMovie extends Component {
   // Renders the entire app on the DOM
+
+  // local state to hold data before sending it via PUT route
+//   state = {
+//     movie_id: '',
+//     title: movie.title,
+//     description: movie.description,
+//     genre_id: '',
+// }
+
+handleChange = (event, inputProperty) => {
+    event.preventDefault();
+    console.log('event happened', event.target.value);
+    // stores data input in local state
+    this.setState({
+        [inputProperty]: event.target.value,
+    }); // end setState
+} // end handleChange
+
+editMovie = (event, id) => {
+    event.preventDefault();
+    console.log('id', id);
+    this.props.dispatch({ type: 'EDIT_MOVIE',
+            payload: {
+            movie_id: id,
+            title: this.state.title,
+            description: this.state.description,
+            genre_id: this.state.genre_id,
+        }}); // PUT ROUTE
+    this.props.history.push(`/detailMovie/:id`); // routes back to MovieDetails
+} // end editMovie
+
+backToMovieDetails = () => {
+    this.props.history.push(`/detailMovie/:id`); // routes back to MovieDetails
+} // end backToHome - CANCEL button
   
   render() {
     return (
@@ -18,8 +52,8 @@ class EditMovie extends Component {
                 <textarea 
                     type="text" 
                     id="description" 
-                    onChange={(event) => this.handleChange(event, 'description')}
-                    placeholder={movie.description}/>
+                    onChange={(event) => this.handleChange(event, movie.description, 'description')}
+                    value={movie.description}/>
             </div>
 
             <div className="formCard">
@@ -27,15 +61,14 @@ class EditMovie extends Component {
                 <input 
                     type="text" 
                     id="movieTitle" 
-                    onChange={(event) => this.handleChange(event, 'title')}
-                    placeholder={movie.title}/>
+                    onChange={(event) => this.handleChange(event, movie.title, 'title')}
+                    value={movie.title}/>
                     <br></br>
             <label htmlFor="posterUrl">Poster URL</label>
                 <input 
                     type="url" 
                     id="posterUrl" 
-                    onChange={(event) => this.handleChange(event, 'poster')}
-                    placeholder={movie.poster}/>
+                    value={movie.poster}/>
                     <br></br>
             <label htmlFor="category" id="newGenre">Genre</label>
                 <select 
@@ -63,9 +96,9 @@ class EditMovie extends Component {
                 </select>
                 <br></br>
                     <button className="button" 
-                            onClick={this.addMovie}>Save</button>
+                            onClick={(event) => this.editMovie(event, movie.id)}>Save</button>
                     <button className="button"
-                            onClick={this.backToMovieList}>Cancel</button>
+                            onClick={this.backToDetails}>Cancel</button>
             </div>
         </form>)}
       </div>
