@@ -56,7 +56,6 @@ List technologies and frameworks here
 - nodemon
 - express
 - postgreSQL
-- material UI-core
 - redux-logger
 - redux-saga
 

@@ -4,6 +4,7 @@ import './App.css';
 
 import MovieList from '../MovieList/MovieList';
 import MovieForm from '../MovieForm/MovieForm';
+import MovieSearch from '../MovieSearch/MovieSearch';
 import MovieDetail from '../MovieDetail/MovieDetail';
 import EditMovie from '../EditMovie/EditMovie';
 
@@ -20,12 +21,13 @@ class App extends Component {
                 <ul>
                   <li><Link to ="/">Movie List</Link></li> 
                   <li><Link to ="/movieForm">Add a Movie</Link></li>
-                  {/* <li><Link to ="/movieDetails">Movie Details</Link></li> */}
+                  <li><Link to ="/movieSearch">Search</Link></li>
                 </ul>
               </nav>
             </div>
             <Route exact path="/" component={MovieList}/>
             <Route path="/movieForm" component={MovieForm} />
+            <Route path="/movieSearch" component={MovieSearch} />
             <Route path="/movieDetails/:id" component={MovieDetail} />
             <Route exact path="/editMovie/:id" component={EditMovie} />
           </Router>

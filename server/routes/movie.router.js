@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
   pool.query(queryText)
     .then((result) => { res.send(result.rows); })
     .catch((error) => {
-      console.log('Bad news bears, error in POST', error);
+      console.log('Bad news bears, error in GET', error);
       res.sendStatus(500);
     });
 }); // end GET ROUTE - for all movies to HOME page
@@ -23,7 +23,21 @@ router.get('/:id', (req, res) => {
   pool.query(queryText, [id])
     .then((result) => { res.send(result.rows); })
     .catch((error) => {
-      console.log('Bad news bears, error in POST', error);
+      console.log('Bad news bears, error in GET', error);
+      res.sendStatus(500);
+    });
+}); // end GET ROUTE - for DETAILS page
+
+// GET ROUTE
+router.get('/search/:search', (req, res) => {
+  let search = req.params.search; // identifys specific movie for DETAILS page
+  console.log('router search', search);
+  const queryText = `SELECT * FROM "movies" WHERE "title" ILIKE '%' || $1 || '%' LIMIT 12;`;
+  
+  pool.query(queryText, [search])
+    .then((result) => { res.send(result.rows); })
+    .catch((error) => {
+      console.log('Bad news bears, error in GET', error);
       res.sendStatus(500);
     });
 }); // end GET ROUTE - for DETAILS page

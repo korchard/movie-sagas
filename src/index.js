@@ -21,6 +21,7 @@ function* rootSaga() {
     yield takeEvery('GET_MOVIES', getMovies);
     yield takeEvery('GET_DETAILS', getDetails);
     yield takeEvery('GET_CATEGORY', getCategory);
+    yield takeEvery('GET_SEARCH', getSearch);
     yield takeEvery('ADD_MOVIE', addMovie);
     yield takeEvery('EDIT_MOVIE', editMovie);
 } // end rootSaga
@@ -59,6 +60,19 @@ function* getCategory(action) {
       console.log('Bad news bears, error with INDEX GET', error);
     }
 } // end getCategory
+
+// GET ROUTE - for search
+function* getSearch(action) {
+    console.log('search', action.payload );
+    try {
+        const response = yield axios.get(`/api/movie/search/${action.payload}`);
+        // sends specific movie to the movie reducer
+        yield put({ type: 'SET_MOVIES', payload: response.data })
+        console.log('getSearch', response.data);
+    } catch (error) {
+      console.log('Bad news bears, error with INDEX GET', error);
+    }
+} // end getSearch
 
 // POST ROUTE
 function* addMovie( action ) {
