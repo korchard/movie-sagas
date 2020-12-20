@@ -5,38 +5,28 @@ import './EditMovie.css';
 class EditMovie extends Component {
   // Renders the entire app on the DOM
 
-  // local state to hold data before sending it via PUT route
-//   state = {
-//     movie_id: '',
-//     title: movie.title,
-//     description: movie.description,
-//     genre_id: '',
-// }
-
 handleChange = (event, inputProperty) => {
     event.preventDefault();
     console.log('event happened', event.target.value);
-    // stores data input in local state
-    this.setState({
-        [inputProperty]: event.target.value,
-    }); // end setState
+    let updatedMovie = { // creates an index 0 array to reference
+        ...this.props.reduxStore.movies[0], 
+        [inputProperty]: event.target.value
+    } // end setState
+    // sending the edited info to the reducer
+    this.props.dispatch({ type: 'SET_MOVIES', payload: [updatedMovie] })
 } // end handleChange
 
 editMovie = (event, id) => {
     event.preventDefault();
-    console.log('id', id);
     this.props.dispatch({ type: 'EDIT_MOVIE',
-            payload: {
-            movie_id: id,
-            title: this.state.title,
-            description: this.state.description,
-            genre_id: this.state.genre_id,
-        }}); // PUT ROUTE
-    this.props.history.push(`/detailMovie/:id`); // routes back to MovieDetails
+            payload: this.props.reduxStore.movies[0] }); // PUT ROUTE
+    this.props.history.push(`/movieDetails/${id}`); // routes back to details page
+        this.props.dispatch({ type: 'GET_DETAILS', payload: id }) // specific movie GET with updated info
+        this.props.dispatch({ type: 'GET_CATEGORY', payload: id }) // category GET 
 } // end editMovie
 
 backToMovieDetails = () => {
-    this.props.history.push(`/detailMovie/:id`); // routes back to MovieDetails
+    this.props.history.push(`/movieDetails/:id`); // routes back to MovieDetails
 } // end backToHome - CANCEL button
   
   render() {
@@ -52,8 +42,8 @@ backToMovieDetails = () => {
                 <textarea 
                     type="text" 
                     id="description" 
-                    onChange={(event) => this.handleChange(event, movie.description, 'description')}
-                    value={movie.description}/>
+                    onChange={(event) => this.handleChange(event, 'description')}
+                    value={this.props.reduxStore.movies[0].description}/>
             </div>
 
             <div className="formCard">
@@ -61,15 +51,15 @@ backToMovieDetails = () => {
                 <input 
                     type="text" 
                     id="movieTitle" 
-                    onChange={(event) => this.handleChange(event, movie.title, 'title')}
-                    value={movie.title}/>
+                    onChange={(event) => this.handleChange(event, 'title')}
+                    value={this.props.reduxStore.movies[0].title}/>
                     <br></br>
             <label htmlFor="posterUrl">Poster URL</label>
                 <input 
                     type="text" 
-                    id="posterUrl" 
-                    onChange={(event) => this.handleChange(event, movie.poster, 'poster')}
-                    value={movie.poster}/>
+                    id="posterUrl"
+                    value={movie.poster}
+                    readOnly/>
                     <br></br>
             <label htmlFor="category" id="newGenre">Genre</label>
                 <select 
@@ -99,7 +89,7 @@ backToMovieDetails = () => {
                     <button className="button" 
                             onClick={(event) => this.editMovie(event, movie.id)}>Save</button>
                     <button className="button"
-                            onClick={this.backToDetails}>Cancel</button>
+                            onClick={this.backToMovieDetails}>Cancel</button>
             </div>
         </form>)}
       </div>

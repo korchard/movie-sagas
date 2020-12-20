@@ -10,7 +10,6 @@ class MovieDetail extends Component {
         this.props.history.push(`/editMovie/${movie.id}`); // routes to details page
         this.props.dispatch({ type: 'GET_DETAILS', payload: movie.id }) // specific movie GET
         this.props.dispatch({ type: 'GET_CATEGORY', payload: movie.id }) // category GET
-        this.props.dispatch({ type: 'EDIT_INPUTS', payload: movie} )
     }
 
   render() {

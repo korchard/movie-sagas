@@ -3,7 +3,7 @@ DROP TABLE "movies";
 CREATE TABLE "movies" (
   "id" SERIAL PRIMARY KEY,
   "title" VARCHAR(120) NOT NULL,
-  "poster"  VARCHAR(120) NOT NULL,
+  "poster"  VARCHAR(700) NOT NULL,
   "description" TEXT NOT NULL
 );
 
@@ -94,3 +94,8 @@ SELECT name FROM "genres"
 JOIN "movie_genre" ON genres.id = movie_genre.genre_id
 JOIN "movies" ON movie_genre.movie_id = movies.id
 WHERE movies.id = 1;
+
+DELETE FROM "movie_genre" WHERE movie_id = 1;
+DELETE FROM "movies" WHERE id = 1;
+
+UPDATE "movies" SET "title" = 'Avatar - WOW', "poster" = 'images/avatar.jpeg', "description" = 'What a coolio movie!' WHERE "id" = 1;

@@ -13,9 +13,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* <div className="effect"></div>
-        <div className="effect dos"></div>
-        <div className="effect tres"></div> */}
         <h1 className="header">HB OH-NO!</h1>
           <Router>
             <div className="navBar">

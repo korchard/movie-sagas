@@ -16,15 +16,15 @@ This is an application that demonstrates the use of react-redux, joining databas
 
 ## Screen Shot
 
-![HOME](./public/images/ss1.png)
+![MOVIE_LIST](./public/images/ss1.png)
 ![MOVIE_DETAILS](./public/images/ss2.png)
+![MOVIE_FORM](./public/images/ss3.png)
 
 ### Prerequisites - dependencies
 
 - [Node.js](https://nodejs.org/en/)
 - [postgreSQL](https://www.postgresql.org/download/)
 - [react-redux](https://redux.js.org/introduction/installation)
-- [materialUI](https://material-ui.com/getting-started/installation/)
 
 ### SQL Requirements
 - PostgreSQL

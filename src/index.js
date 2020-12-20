@@ -76,10 +76,9 @@ function* addMovie( action ) {
 function* editMovie( action ) {
     console.log('index put', action.payload);
     try { 
-        yield axios.put(`/api/movie/${action.payload.movie_id}`, action.payload)
+        yield axios.put(`/api/movie/${action.payload.id}`, action.payload)
         // calls GET ROUTE to refresh details page with new movie
         yield put({ type: 'SET_MOVIES' }) 
-        console.log('PUT INDEX', )
     } catch (error) {
         console.log('Bad news bears, error with INDEX PUT', error);
     }
