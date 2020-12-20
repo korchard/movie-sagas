@@ -66,8 +66,9 @@ backToMovieDetails = () => {
                     <br></br>
             <label htmlFor="posterUrl">Poster URL</label>
                 <input 
-                    type="url" 
+                    type="text" 
                     id="posterUrl" 
+                    onChange={(event) => this.handleChange(event, movie.poster, 'poster')}
                     value={movie.poster}/>
                     <br></br>
             <label htmlFor="category" id="newGenre">Genre</label>

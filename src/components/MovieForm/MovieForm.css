@@ -14,6 +14,7 @@
     border-radius: .5em;
     display: inline-block;
     width: 450px;
+    min-width: 300px;
     height: 450px;
     text-align: center;
     padding: 1em;
@@ -23,6 +24,7 @@
     background: linear-gradient(-45deg, #414040, #1f171a, #c1c3c4, #494d4c);
 	background-size: 400% 400%;
     animation: gradient 10s ease infinite;
+    flex: auto;
 }
 
 #category {
@@ -35,7 +37,8 @@
 
 .formBox {
     float: left;
-    margin-left: 15em;
+    margin-left: 15%;
+    flex: auto;
 }
 
 input {
@@ -44,6 +47,7 @@ input {
 	background-size: 400% 400%;
     animation: gradient 10s ease infinite;
     width: 300px;
+    min-width: 100px;
     height: 3em;
     margin-bottom: 2em;
     margin-top: 2em;
@@ -72,13 +76,20 @@ label {
     padding-right: 1.2em;
 }
 
+option {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 textarea {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     box-shadow: 2px 2px 5px black;
     background: linear-gradient(-45deg, #a7a5a5, #f8eff2, #c1c3c4, #d2d4d4);
 	background-size: 400% 400%;
     animation: gradient 10s ease infinite;
     width: 350px;
+    min-width: 200px;
     height: 330px;
     margin-bottom: 2em;
     margin-top: 2em;
+    flex: auto;
 }

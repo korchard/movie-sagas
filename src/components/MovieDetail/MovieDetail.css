@@ -3,7 +3,9 @@
     border-radius: .5em;
     display: inline-block;
     width: 600px;
+    min-width: 300px;
     height: 350px;
+    max-height: 700px;
     text-align: center;
     padding: 1em;
     margin-right: 1rem;
@@ -54,8 +56,6 @@
 }
 
 .detailTitle {
-    /* float: right;
-    margin-right: 9.5em; */
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 3em;
     text-shadow: 2px 2px 5px black;

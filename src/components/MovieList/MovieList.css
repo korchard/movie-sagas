@@ -12,6 +12,7 @@
     border-radius: .5em;
     display: inline-block;
     width: 250px;
+    min-width: 200px;
     height: 450px;
     text-align: center;
     padding: 1em;
