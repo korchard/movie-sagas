@@ -15,6 +15,13 @@ class MovieSearch extends Component {
         }) // end setState
     } // end handleChange
 
+    goToDetails = (id) => {
+        console.log('id', id);
+        this.props.history.push(`/movieDetails/${id}`); // routes to details page
+        this.props.dispatch({ type: 'GET_DETAILS', payload: id }) // specific movie GET
+        this.props.dispatch({ type: 'GET_CATEGORY', payload: id }) // category GET
+    } // end goToDetails 
+
     searchMovie = () => {
         this.props.dispatch({ type: 'GET_SEARCH', payload: this.state.search });
     } // end searchMovie
@@ -30,15 +37,16 @@ class MovieSearch extends Component {
                     onChange={this.handleChange}/>
                 <button className="button" 
                     onClick={this.searchMovie}>Find</button>
-        {/* <div className="center"> */}
-        {/* {this.props.reduxStore.movies.map(movie => 
+        <section>
+        {this.props.reduxStore.movies.map(movie => 
             <div className="display card" key={movie.id}>
                 <img className="homeImg" alt={movie.title} src={movie.poster} height="300px" width="200px"/>
                 <br></br>
                 <button className="button" 
                         onClick={() => this.goToDetails(movie.id)}>{movie.title}</button>
-        )} */}
-        {/* </div> */}
+            </div>
+        )}
+        </section>
     </div>
     );
   }

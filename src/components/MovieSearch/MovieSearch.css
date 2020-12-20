@@ -1,0 +1,37 @@
+.detailTitle {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 3em;
+    text-shadow: 2px 2px 5px black;
+    color: white;
+}
+
+input {
+    box-shadow: 2px 2px 5px black;
+    background: linear-gradient(-45deg, #a7a5a5, #f8eff2, #c1c3c4, #d2d4d4);
+	background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    width: 300px;
+    min-width: 100px;
+    height: 3em;
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+label {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-shadow: 2px 2px 5px white;
+    font-size: large;
+    margin-right: 2em;
+}

@@ -67,7 +67,7 @@ function* getSearch(action) {
     try {
         const response = yield axios.get(`/api/movie/search/${action.payload}`);
         // sends specific movie to the movie reducer
-        yield put({ type: 'SET_MOVIES', payload: response.data })
+        yield put({ type: 'SET_SEARCH', payload: response.data })
         console.log('getSearch', response.data);
     } catch (error) {
       console.log('Bad news bears, error with INDEX GET', error);
@@ -105,6 +105,8 @@ const sagaMiddleware = createSagaMiddleware();
 const movies = (state = [], action) => {
     switch (action.type) {
         case 'SET_MOVIES':
+            return action.payload;
+        case 'SET_SEARCH':
             return action.payload;
         default:
             return state;
