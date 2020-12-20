@@ -42,6 +42,7 @@ This is an application that demonstrates the use of react-redux, joining databas
 2. Clicking on a movie will route you to another page which includes the details about the movie.
 3. There is a Movie Form page that allows the user to add a movie to the database, which will then be displayed on the movie list page. 
 4. A user may edit the title or description of a current movie.
+5. A user may also search movies by title on the search page. 
 
 ## Built With
 

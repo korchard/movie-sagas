@@ -1,8 +1,50 @@
+.button {
+    margin-top: 1em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: medium;
+    box-shadow: 2px 2px 5px black;
+    width: 12.5em;
+    height: 3em;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+}
+
+.card {
+    justify-self: auto;
+    border-radius: .5em;
+    display: inline-block;
+    width: 250px;
+    min-width: 200px;
+    height: 450px;
+    text-align: center;
+    padding: 1em;
+    margin-right: 3em;
+    margin-left: 3em;
+    margin-bottom: 1rem;
+    box-shadow: 2px 2px 5px black;
+    background: linear-gradient(-45deg, #414040, #1f171a, #c1c3c4, #494d4c);
+	background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+}
+
 .detailTitle {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 3em;
     text-shadow: 2px 2px 5px black;
     color: white;
+}
+
+.display {
+    width: 20%;
+    float: left;
+    overflow: hidden;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.homeImg {
+    margin-top: 2.5em;
+    box-shadow: 2px 2px 5px white;
 }
 
 input {

@@ -4,6 +4,11 @@ import './MovieSearch.css';
 
 class MovieSearch extends Component {
 
+    componentDidMount() {
+        this.props.dispatch({type: 'GET_SEARCH' });
+    } // end componentDidMount - calls SEARCH GET request
+
+    // local state
     state = {
         search: ''
     }
@@ -23,7 +28,10 @@ class MovieSearch extends Component {
     } // end goToDetails 
 
     searchMovie = () => {
-        this.props.dispatch({ type: 'GET_SEARCH', payload: this.state.search });
+        this.props.dispatch({ type: 'GET_SEARCH', payload: this.state.search }); // GET search
+        this.setState({
+            search: ''
+        }) // end setState
     } // end searchMovie
   
   render() {
@@ -34,6 +42,7 @@ class MovieSearch extends Component {
                 <input 
                     type="text" 
                     id="movieSearch" 
+                    value={this.state.search}
                     onChange={this.handleChange}/>
                 <button className="button" 
                     onClick={this.searchMovie}>Find</button>

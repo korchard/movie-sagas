@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import './EditMovie.css';
 
 class EditMovie extends Component {
-  // Renders the entire app on the DOM
 
 handleChange = (event, inputProperty) => {
     event.preventDefault();
