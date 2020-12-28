@@ -4,6 +4,12 @@ import { connect } from "react-redux";
 import './EditMovie.css';
 
 class EditMovie extends Component {
+    
+    componentDidMount = () => {
+        console.log('component did mount', this.props.match.params.id);
+        this.props.dispatch({ type: 'GET_DETAILS', payload: this.props.match.params.id }) // specific movie GET
+        this.props.dispatch({ type: 'GET_CATEGORY', payload: this.props.match.params.id }) // category GET
+    } // end componentDidMount
 
 handleChange = (event, inputProperty) => {
     event.preventDefault();
@@ -25,8 +31,8 @@ editMovie = (event, id) => {
         this.props.dispatch({ type: 'GET_CATEGORY', payload: id }) // category GET 
 } // end editMovie
 
-backToMovieDetails = () => {
-    this.props.history.push(`/movieDetails/:id`); // routes back to MovieDetails
+backToMovieDetails = (id) => {
+    this.props.history.push(`/movieDetails/${id}`); // routes back to MovieDetails
 } // end backToHome - CANCEL button
   
   render() {
@@ -89,7 +95,7 @@ backToMovieDetails = () => {
                     <button className="button" 
                             onClick={(event) => this.editMovie(event, movie.id)}>Save</button>
                     <button className="button"
-                            onClick={this.backToMovieDetails}>Cancel</button>
+                            onClick={() => this.backToMovieDetails(movie.id)}>Cancel</button>
             </div>
         </form>)}
       </div>

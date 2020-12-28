@@ -5,12 +5,18 @@ import './MovieDetail.css';
 
 class MovieDetail extends Component {
 
+    componentDidMount = () => {
+        console.log('component did mount', this.props.match.params.id);
+        this.props.dispatch({ type: 'GET_DETAILS', payload: this.props.match.params.id }) // specific movie GET
+        this.props.dispatch({ type: 'GET_CATEGORY', payload: this.props.match.params.id }) // category GET
+    } // end componentDidMount
+
     editMovie = (movie) => {
         console.log('id', movie.id);
         this.props.history.push(`/editMovie/${movie.id}`); // routes to details page
         this.props.dispatch({ type: 'GET_DETAILS', payload: movie.id }) // specific movie GET
         this.props.dispatch({ type: 'GET_CATEGORY', payload: movie.id }) // category GET
-    }
+    } // end editMovie
 
   render() {
     // renders specific movie details
