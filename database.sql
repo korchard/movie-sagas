@@ -69,7 +69,7 @@ VALUES
 ('Thriller');
 
 INSERT INTO "movie_genre" ("movie_id", "genre_id")
-VALUES (1, 10), (1, 14), 
+VALUES (16, 10), (16, 14), 
 (2, 3), (2, 8), (2, 13),
 (3, 1), (3, 16),
 (4, 3), (4, 2),
